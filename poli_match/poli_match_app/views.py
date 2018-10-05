@@ -3,14 +3,19 @@ from django.contrib import auth
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
+from .models import Politician, Quote
+
 def index(request):
-    return render(request, 'poli_match/index.html')
+    quotes = Quote.objects.all()
+    return render(request, 'poli_match/index.html', {'quotes': quotes})
 
 def politicians(request):
-    return render(request, 'poli_match/politicians.html')
+    politicians = Politician.objects.all()
+    return render(request, 'poli_match/politicians.html', {'politicians': politicians})
 
-def politician_detail(request):
-    return render(request, 'poli_match/politician_detail.html')
+def politician_detail(request, pk):
+    politician = Politician.objects.get(id=pk)
+    return render(request, 'poli_match/politician_detail.html', {'politicians': politicians})
 
 # Auth-related routes
 def signup(request):
