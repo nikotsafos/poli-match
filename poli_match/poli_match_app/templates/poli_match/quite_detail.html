@@ -1,0 +1,10 @@
+{% extends 'poli_match/base.html' %}
+
+{% block content %}
+<h3>Quotes</h3>
+<ul>
+	{% for quote in quotes.all %}
+		<li>{{ quote.content }}</li>
+	{% endfor %}
+</ul>
+{% endblock %}

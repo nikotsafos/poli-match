@@ -10,6 +10,10 @@ def index(request):
     quotes = Quote.objects.all()
     return render(request, 'poli_match/index.html', {'quotes': quotes})
 
+def quote_detail(request, pk):
+    quote = Quote.objects.get(id=pk)
+    return render(request, 'poli_match/quote_detail.html', {'quotes': quotes})
+
 def politicians(request):
     politicians = Politician.objects.all()
     return render(request, 'poli_match/politicians.html', {'politicians': politicians})
