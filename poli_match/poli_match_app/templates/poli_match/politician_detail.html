@@ -12,4 +12,5 @@
 		<li>- {{ quote.content }}</li>
 	{% endfor %}
 </ul>
+<a href="{% url 'quote_detail' pk=rand %}"><i class="material-icons">submit</i>Swipe again?</a>
 {% endblock %}
