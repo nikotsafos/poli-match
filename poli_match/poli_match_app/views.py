@@ -2,14 +2,13 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from random import randint
+from random import *
 
 from .models import Politician, Quote
 
 def index(request):
     quotes = Quote.objects.all()
-    rand = randint(3,5)
-    return render(request, 'poli_match/index.html', {'quotes': quotes, 'rand': rand})
+    return render(request, 'poli_match/index.html', {'quotes': quotes})
 
 def quote_detail(request, pk):
     quote = Quote.objects.get(id=pk)
@@ -25,8 +24,7 @@ def politicians(request):
 
 def politician_detail(request, pk):
     politician = Politician.objects.get(id=pk)
-    rand = randint(3,5)
-    return render(request, 'poli_match/politician_detail.html', {'politician': politician, 'rand':rand})
+    return render(request, 'poli_match/politician_detail.html', {'politician': politician})
 
 # Auth-related routes
 def signup(request):
