@@ -25,7 +25,7 @@ def politicians(request):
 
 def politician_detail(request, pk):
     politician = Politician.objects.get(id=pk)
-    return render(request, 'poli_match/politician_detail.html', {'politicians': politicians})
+    return render(request, 'poli_match/politician_detail.html', {'politician': politician})
 
 # Auth-related routes
 def signup(request):
