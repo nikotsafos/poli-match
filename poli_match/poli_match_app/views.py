@@ -8,7 +8,7 @@ from .models import Politician, Quote
 
 def index(request):
     quotes = Quote.objects.all()
-    rand = randint(1,2)
+    rand = randint(3,4,5,6,7,8,9,10,11,12,13)
     print('this is random quote', str(rand))
     return render(request, 'poli_match/index.html', {'quotes': quotes, 'rand': str(rand)})
 
@@ -26,7 +26,7 @@ def politicians(request):
 
 def politician_detail(request, pk):
     politician = Politician.objects.get(id=pk)
-    rand = randint(1,2)
+    rand = randint(3,4,5,6,7,8,9,10,11,12,13)
     return render(request, 'poli_match/politician_detail.html', {'politician': politician, 'rand': rand})
 
 # Auth-related routes
