@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-<a href="{% url 'quote_detail' pk=rand %}"><i class="material-icons">submit</i>Start Swiping</a>
 <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
 <h4>Office: {{ politician.office }}</h4>
 <img src="{{ politician.photo_url }}" alt="politician_photo" class="politician-photo">
