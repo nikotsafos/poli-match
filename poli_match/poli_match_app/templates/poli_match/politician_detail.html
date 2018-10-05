@@ -1,0 +1,13 @@
+{% extends 'poli_match/base.html' %}
+
+{% block content %}
+<h2>{{ politician.name }} (<a href="{% url 'artist_edit' pk=politician.pk %}">edit</a>)</h2>
+<h4>Home Country: {{ politician.nationality }}</h4>
+<img src="{{ politician.photo_url }}" alt="politician_photo" class="politician-photo">
+
+<h3>Quotes</h3>
+<ul>
+	{% for quote in politician.quotes.all %}
+		<li>{{ quote.title }} - {{ quote.content }}</li>
+	{% endfor %}
+</ul>
