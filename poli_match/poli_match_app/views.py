@@ -9,7 +9,8 @@ from .models import Politician, Quote
 def index(request):
     quotes = Quote.objects.all()
     rand = randint(1,2)
-    return render(request, 'poli_match/index.html', {'quotes': quotes, 'rand': rand})
+    print('this is random quote', str(rand))
+    return render(request, 'poli_match/index.html', {'quotes': quotes, 'rand': str(rand)})
 
 def quote_detail(request, pk):
     quote = Quote.objects.get(id=pk)
@@ -53,16 +54,16 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'poli_match/login.html')
     elif request.method == 'POST':
+        print("HITTING THE THING WE WANT TO HIT")
         email = request.POST['email']
         password = request.POST['password']
         user = auth.authenticate(username=email, password=password)
-
         if user is not None:
             auth.login(request, user)
-            return render(request, 'poli_match/index.html')
+            return redirect('index')
         else:
             return render(request, 'poli_match/login.html', { 'error': 'invalid credentials' })
 
 def logout(request):
     auth.logout(request)
-    return render(request, 'poli_match/index.html')
+    return redirect('index')
