@@ -1,9 +1,10 @@
 {% extends 'poli_match/base.html' %}
+{% load static %}
 
 {% block content %}
 <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
 <h4>Office: {{ politician.office }}</h4>
-<img src="{{ politician.photo_url }}" alt="politician_photo">
+<img src="{{ politician.photo_url }}" alt="politician_photo" class="politician-photo">
 
 <h3>Quotes</h3>
 <ul>

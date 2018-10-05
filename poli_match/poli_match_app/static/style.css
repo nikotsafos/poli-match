@@ -5,8 +5,23 @@
 
 body{
 	background-color: #FBFBFC;
+	height: 500px;
 }
 
 nav{
 	background-color: #5A76FC;
+}
+
+.page-footer{
+	background-color: #5A76FC;
+}
+
+.politician-photo {
+	width: 200px;
+	height: 200px;
+	background-size: cover;
+	display: block;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
 }
