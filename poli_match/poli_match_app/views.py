@@ -43,10 +43,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return render(request, 'poli_match/index.html')
+            return redirect('index')
         else:
             return render(request, 'poli_match/login.html', { 'error': 'invalid credentials' })
 
 def logout(request):
     auth.logout(request)
-    return render(request, 'poli_match/index.html')
+    return redirect('index')
