@@ -7,7 +7,7 @@ Matching citizens with politicians whose quotes align their views.
 Citizen Politics - Creating an app that allows users to “agree or disagree” with a series of politicians quotes, eventually matching the user to a politician that has the most matched quotes. 
 
 
-### Team “Name”
+### Team “CodeBob DesignPants ”
 
 Nathaniel Dominguez - Developer
 Niko Tsafos - Developer
