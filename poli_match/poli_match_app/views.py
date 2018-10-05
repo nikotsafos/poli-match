@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'poli_match/index.html')
 
 # Auth-related routes
 def signup(request):
@@ -36,10 +36,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('index')
+            return redirect('poli_match/index.html')
         else:
             return render(request, 'poli_match/login.html', { 'error': 'invalid credentials' })
 
 def logout(request):
     auth.logout(request)
-    return redirect('index')
+    return redirect('poli_match/index.html')
