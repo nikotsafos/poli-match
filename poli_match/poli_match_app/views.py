@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'poli_match/index.html')
 
 def politicians(request):
-    return render(request, 'poli_match/politicians.html')
+    return render(request, 'poli_match/politicians.html', {'politicians': politicians})
 
 def politician_detail(request):
     return render(request, 'poli_match/politician_detail.html')
