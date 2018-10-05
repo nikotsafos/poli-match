@@ -13,7 +13,7 @@ def index(request):
 
 def quote_detail(request, pk):
     quote = Quote.objects.get(id=pk)
-    return render(request, 'poli_match/quote_detail.html', {'quotes': quotes})
+    return render(request, 'poli_match/quote_detail.html', {'quote': quote})
 
 def quotes(request):
     quotes = Quote.objects.all()
