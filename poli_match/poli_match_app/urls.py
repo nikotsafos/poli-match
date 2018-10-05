@@ -7,5 +7,5 @@ urlpatterns = [
     path('logout', views.logout, name='logout'),
     path('signup', views.signup, name='signup'),
     path('politicians', views.politicians, name='politicians'),
-    path('politician_detail', views.politician_detail, name='politician_detail'),
+    path('politicians/<int:pk>', views.politician_detail, name='politician_detail'),
 ]
