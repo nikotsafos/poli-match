@@ -1,0 +1,19 @@
+{% extends 'poli_match_app/base.html' %}
+
+{% block content %}
+<h1>Login</h1>
+
+<form method="POST" action="/login">
+  {% csrf_token %}
+  <div>
+    <label>Email:</label>
+    <input type="text" name="email" placeholder="Your email">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password">
+  </div>
+  <input type="submit" value="log me in">
+</form>
+
+{% endblock %}
