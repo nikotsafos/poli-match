@@ -23,7 +23,8 @@ def signup(request):
         last_name = request.POST['last_name']
 
         try:
-            user = User.objects.create_user(email=email,
+            user = User.objects.create_user(username=email,
+                email=email,
                 password=password,
                 first_name=first_name,
                 last_name=last_name)
@@ -38,14 +39,14 @@ def login(request):
     elif request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        user = auth.authenticate(email=email, password=password)
+        user = auth.authenticate(username=email, password=password)
 
         if user is not None:
             auth.login(request, user)
-            return redirect('poli_match/index.html')
+            return render(request, 'poli_match/index.html')
         else:
             return render(request, 'poli_match/login.html', { 'error': 'invalid credentials' })
 
 def logout(request):
     auth.logout(request)
-    return redirect('poli_match/index.html')
+    return render(request, 'poli_match/index.html')

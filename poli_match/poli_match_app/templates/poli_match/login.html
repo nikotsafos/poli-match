@@ -1,6 +1,11 @@
 {% extends 'poli_match/base.html' %}
 
 {% block content %}
+{% if error %}
+  <div>
+    <strong>Error!</strong> {{error}}
+  </div>
+{% endif %}
 <h1>Login</h1>
 
 <form method="POST" action="/login">
