@@ -7,6 +7,9 @@ class Politician(models.Model):
     last_name = models.CharField(max_length=50)
     photo_url = models.TextField()
     summary = models.TextField()
+    office = models.CharField(max_length=100, default='some string')
+    party = models.CharField(max_length=50, default='some string')
+
 
 
     def __str__(self):
