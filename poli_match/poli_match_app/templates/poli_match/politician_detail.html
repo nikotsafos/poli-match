@@ -8,7 +8,7 @@
 <h3>Quotes</h3>
 <ul>
 	{% for quote in politician.quotes.all %}
-		<li>{{ quote.content }}</li>
+		<li>- {{ quote.content }}</li>
 	{% endfor %}
 </ul>
 {% endblock %}

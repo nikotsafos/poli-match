@@ -10,7 +10,6 @@ def index(request):
     quotes = Quote.objects.all()
     return render(request, 'poli_match/index.html', {'quotes': quotes})
 
-
 def quote_detail(request, pk):
     quote = Quote.objects.get(id=pk)
     return render(request, 'poli_match/quote_detail.html', {'quote': quote})
@@ -25,7 +24,7 @@ def politicians(request):
 
 def politician_detail(request, pk):
     politician = Politician.objects.get(id=pk)
-    return render(request, 'poli_match/politician_detail.html', {'politicians': politicians})
+    return render(request, 'poli_match/politician_detail.html', {'politician': politician})
 
 # Auth-related routes
 def signup(request):
