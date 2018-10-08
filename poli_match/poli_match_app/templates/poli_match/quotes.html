@@ -1,10 +1,12 @@
 {% extends 'poli_match/base.html' %}
 
 {% block content %}
+<div class="container">
 <h2>Quotes</h2>
 <ul>
 	{% for quote in quotes %}
 		<li><a href="{% url 'quote_detail' pk=quote.pk %}">{{ quote.content }}</a> by <a href="{% url 'politician_detail' pk=quote.politician.id %}">{{ quote.politician }}</a></li>
 	{% endfor %}
 </ul>
+</div>
 {% endblock %}

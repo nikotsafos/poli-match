@@ -3,17 +3,53 @@
 	height: 70px;
 }
 
+#background {
+	width: 100%;
+	background-size: cover;
+}
+
+#frame {
+	position: relative;
+}
+
+#background-logo {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: auto;
+}
+
+#home-btn {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
 body{
 	background-color: #FBFBFC;
-	height: 500px;
+	display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 nav{
 	background-color: #5A76FC;
+	z-index: 100;
 }
 
 .page-footer{
 	background-color: #5A76FC;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-align: center;
 }
 
 .politician-photo {
@@ -25,3 +61,4 @@ nav{
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 }
+
