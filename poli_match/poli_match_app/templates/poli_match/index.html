@@ -4,15 +4,9 @@
 {% block content %}
 
 <div id='frame'>
-    <div>
         <img src="{% static 'background.png' %}" alt="background" id="background">
-    </div> 
-    <div>
         <img src="{% static 'party-swipe-white-logo-transparent.png' %}" alt="background-logo" id="background-logo">
-    </div>
-    <div>
         <a href="{% url 'quote_detail' pk=rand %}" id="home-btn" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Start Swiping<i class="material-icons right">send</i></a>
-    </div>
     <!-- <div>
         <img src="{% static 'background.png' %}" alt="background" id="background">
     </div> -->
