@@ -5,7 +5,7 @@
 
 #background {
 	width: 100%;
-	background-size: cover;
+	height: auto;
 }
 
 #frame {
@@ -50,6 +50,8 @@ nav{
 	width: 100%;
 	color: white;
 	text-align: center;
+	height: 64px;
+	flex: 1 0 auto;
 }
 
 .politician-photo {
@@ -61,4 +63,3 @@ nav{
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 }
-
