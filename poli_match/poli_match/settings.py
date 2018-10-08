@@ -78,8 +78,7 @@ DATABASES['default'] = dj_database_url.config(
 SECRET_KEY = env('SECRET_KEY')
 
 CACHES = {
-    'default': env.cache(),
-    'redis': env.cache('REDIS_URL')
+    'default': env.cache()
 }
 
 # Password validation
