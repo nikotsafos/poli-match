@@ -10,20 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import environ
+import dj_database_url
+root = environ.Path(__file__) - 3
+env = environ.Env(DEBUG=(bool, True),)
+environ.Env.read_env()
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE_ROOT = root()
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jc2+0$yzcu!i+kxnldtsh9%8!+gvnh!^io4##()l=+2ygk14#l'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -74,14 +70,17 @@ WSGI_APPLICATION = 'poli_match.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'poli_match',
-        'HOST': 'localhost',
-    }
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(
+   default=env.db('DATABASE_URL')
+)
 
+SECRET_KEY = env('SECRET_KEY')
+
+CACHES = {
+    'default': env.cache(),
+    'redis': env.cache('REDIS_URL')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -118,5 +117,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+public_root = root.path('public/')
 
 STATIC_URL = '/static/'
