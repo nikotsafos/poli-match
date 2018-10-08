@@ -13,9 +13,9 @@
   <body>
     {% include 'poli_match/navbar.html' %}
   
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
+    <div>
+      <div>
+        <div>
           {% block content %}
           {% endblock %}
         </div>
@@ -26,6 +26,6 @@
     <script>$(document).ready(function(){
     $('.sidenav').sidenav();
     });</script>
-    <!-- {% include 'poli_match/footer.html' %} -->
+    {% include 'poli_match/footer.html' %}
   </body>
 </html>
