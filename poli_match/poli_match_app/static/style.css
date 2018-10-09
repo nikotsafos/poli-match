@@ -34,6 +34,7 @@ a, p, li {
 	width: 64px;
 	height: auto;
 	color: #FBFBFC;
+	position: static;
 }
 
 
@@ -46,8 +47,19 @@ a, p, li {
 
 }
 
-body{
+h1, h2 {
+	margin: 0;
+	padding-bottom: 5%;
+}
+
+.columns {
 	background-color: #CCD4FC;
+	min-height: 100vh;
+	padding: 5%;
+}
+
+body{
+	background-color: #FBFBFC;
 	display: flex;
     min-height: 100vh;
     flex-direction: column;
