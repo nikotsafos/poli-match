@@ -13,11 +13,13 @@ a, p, li {
 
 #frame {
 	position: relative;
-	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #background {
 	width: 100%;
+	height: auto;
 }
 
 #background-logo {
@@ -62,7 +64,7 @@ body{
 	background-color: #FBFBFC;
 	display: flex;
     min-height: 100vh;
-    flex-direction: column;
+	flex-direction: column;
 }
 
 nav{
@@ -115,3 +117,12 @@ header, main, footer {
 #pol-btn {
 	margin-bottom: 10px;
 }
+
+/* .form {
+	border-bottom: #FBFBFC;
+} */
+
+label, input, ::placeholder {
+	color: #FBFBFC;
+}
+

@@ -10,4 +10,6 @@ urlpatterns = [
     path('politicians/<int:pk>', views.politician_detail, name='politician_detail'),
     path('quotes/<int:pk>', views.quote_detail, name='quote_detail'),
     path('quotes', views.quotes, name='quotes'),
+    path('politicians/<int:pk>/delete', views.politician_delete, name='politician_delete'),
+    path('quotes/<int:pk>/delete', views.quote_delete, name='quote_delete'),
 ]

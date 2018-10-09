@@ -67,3 +67,11 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('index')
+
+def politician_delete(request, pk):
+    Politician.objects.get(id=pk).delete()
+    return redirect('index')
+
+def quote_delete(request, pk):
+    Quote.objects.get(id=pk).delete()
+    return redirect('index')
