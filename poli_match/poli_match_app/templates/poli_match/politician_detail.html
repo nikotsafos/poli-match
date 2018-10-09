@@ -14,7 +14,7 @@
 		<li>- {{ quote.content }}</li>
 	{% endfor %}
 </ul>
-<a href="{% url 'quote_detail' pk=rand %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Swipe Again<i class="material-icons right">send</i></a>
+<a href="{% url 'quote_detail' pk=rand %}" id='pol-btn' class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Swipe Again<i class="material-icons right">send</i></a>
 </div>
 {% endblock %}
 

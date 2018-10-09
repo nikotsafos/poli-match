@@ -1,5 +1,13 @@
+h1, h2, h3, h4, h5, h6, ul {
+	font-family: 'Raleway', sans-serif;
+}
+
+a, p, li {
+	font-family: 'Merriweather', serif;
+}
+
 #brand-logo{
-	width: 70px;
+	width: auto;
 	height: 70px;
 }
 
@@ -22,6 +30,12 @@
 	height: auto;
 }
 
+.brand-logo-footer {
+	width: 64px;
+	height: auto;
+	color: #FBFBFC;
+}
+
 
 #home-btn {
 	position: absolute;
@@ -33,7 +47,7 @@
 }
 
 body{
-	background-color: #FBFBFC;
+	background-color: #CCD4FC;
 	display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -84,4 +98,8 @@ main {
 
 header, main, footer {
     flex-shrink: 0;
+}
+
+#pol-btn {
+	margin-bottom: 10px;
 }
