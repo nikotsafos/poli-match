@@ -22,6 +22,10 @@ a, p, li {
 	height: auto;
 }
 
+#test {
+	height: 120vh;
+}
+
 #background-logo {
 	position: absolute;
 	top: 40%;
