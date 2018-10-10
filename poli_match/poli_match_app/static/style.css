@@ -144,3 +144,7 @@ label, input, ::placeholder {
 .swipeagainbtn {
 	text-align: center;
 }
+
+.source {
+	text-align: left;
+}

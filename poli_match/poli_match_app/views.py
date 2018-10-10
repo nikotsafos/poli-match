@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from random import randint
 
 from .models import Politician, Quote
+from .forms import PoliticianForm, QuoteForm
 
 def index(request):
     quotes = Quote.objects.all()
@@ -21,7 +22,9 @@ def quotes(request):
     return render(request, 'poli_match/quotes.html', {'quotes': quotes})
 
 def politicians(request):
-    politicians = Politician.objects.all().order_by('state', 'title')
+    politicians = Politician.objects.filter(state='WA')
+    # all().order_by('state', 'title')
+    
     return render(request, 'poli_match/politicians.html', {'politicians': politicians})
 
 def politician_detail(request, pk):
@@ -76,3 +79,44 @@ def quote_delete(request, pk):
     Quote.objects.get(id=pk).delete()
     return redirect('index')
 
+def quote_edit(request, pk):
+    quote = Quote.objects.get(id=pk)
+    if request.method == "POST":
+        form = QuoteForm(request.POST, instance=quote)
+        if form.is_valid():
+            quote = form.save()
+            return redirect('quote_detail', pk=quote.pk)
+    else:
+        form = QuoteForm(instance=quote)
+        return render(request, 'poli_match/quote_form.html', {'form': form})
+
+def politician_edit(request, pk):
+    politician = Politician.objects.get(id=pk)
+    if request.method == "POST":
+        form = PoliticianForm(request.POST, instance=politician)
+        if form.is_valid():
+            politician = form.save()
+            return redirect('politician_detail', pk=politician.pk)
+    else:
+        form = PoliticianForm(instance=politician)
+        return render(request, 'poli_match/politician_form.html', {'form': form})
+
+def politician_create(request):
+    if request.method == "POST":
+        form = PoliticianForm(request.POST)
+        if form.is_valid():
+            politician = form.save()
+            return redirect('politician_detail', pk=politician.pk)
+    else:
+        form = PoliticianForm()
+        return render(request, 'poli_match/politician_form.html', {'form': form})
+
+def quote_create(request):
+    if request.method == "POST":
+        form = QuoteForm(request.POST)
+        if form.is_valid():
+            quote = form.save()
+            return redirect('quote_detail', pk=quote.pk)
+    else:
+        form = PoliticianForm()
+        return render(request, 'politician_form.html', {'form': form})

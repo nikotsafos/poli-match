@@ -12,5 +12,8 @@ urlpatterns = [
     path('quotes', views.quotes, name='quotes'),
     path('politicians/<int:pk>/delete', views.politician_delete, name='politician_delete'),
     path('quotes/<int:pk>/delete', views.quote_delete, name='quote_delete'),
-
+    path('quotes/<int:pk>/edit', views.quote_edit, name='quote_edit'),
+    path('politicians/<int:pk>/edit', views.politician_edit, name='politician_edit'),
+    path('politicians/new', views.politician_create, name='politician_create'),
+    path('quotes/new', views.quote_create, name='quote_create'),
 ]
