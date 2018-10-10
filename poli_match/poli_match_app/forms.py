@@ -9,4 +9,4 @@ class PoliticianForm(forms.ModelForm):
 class QuoteForm(forms.ModelForm):
     class Meta:
         model = Quote
-        fields = ('content', 'source', 'politician')
+        fields = ('content', 'politician')
