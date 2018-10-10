@@ -5,7 +5,6 @@ from django.http import HttpResponse
 from random import randint
 
 from .models import Politician, Quote
-from .forms import PoliticianForm, QuoteForm
 
 def index(request):
     quotes = Quote.objects.all()
