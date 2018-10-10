@@ -24,7 +24,6 @@ class Politician(models.Model):
 
 class Quote(models.Model):
     content = models.TextField()
-    source = models.CharField(max_length=50)
     politician = models.ForeignKey(Politician, on_delete=models.CASCADE, related_name='quotes')
 
     def __str__(self):
