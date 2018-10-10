@@ -7,7 +7,7 @@
 	<!-- for each politician in politicians print this -->
 	{% for politician in politicians %}
 		<li>
-			<a href="{% url 'politician_detail' pk=politician.pk %}">{{ politician.first_name }} {{ politician.last_name }}</a>
+			<h3><a href="{% url 'politician_detail' pk=politician.pk %}">{{ politician.first_name }} {{ politician.last_name }}</a> {{ politician.state }}</h3>
 		</li>
 	{% endfor %}
 </ul>

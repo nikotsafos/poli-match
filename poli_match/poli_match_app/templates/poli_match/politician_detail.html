@@ -6,21 +6,26 @@
 <h2 class="twitter-logo">{{ politician.first_name }} {{ politician.last_name }}</h2><h4 class="twitter-logo"><a href="http://twitter.com/{{ politician.twitter_account }}" target="_blank" class="twitter-logo"><i class="fab fa-twitter"></i></a></h4>
 <br>
 	
-	<a href="{% url 'quote_detail' pk=rand %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Swipe Again<i class="material-icons right">send</i></a>
+	<a href="{% url 'quote_detail' pk=rand %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2 right">Swipe Again<i class="material-icons right">send</i></a>
 	<h4>Office: {{ politician.title }}</h4>
+	<h4>State Rank: {{ politician.state_rank }}</h4>
+	<h4>DOB: {{ politician.date_of_birth }}</h4>
+	<h4>Gender: {{ politician.gender }}</h4>
 	<h4>State: {{ politician.state }}</h4>
 	<h4>Party: {{ politician.party }}</h4>
-	<h4>Official Website: <a href="{{ politician.url }}" target="_blank">Click here</a></h4>
+	<h4>Official Website: <a href="{{ politician.url }}" target="_blank">{{ politician.url }}</a></h4>
 	<h4>Phone: {{ politician.phone }}</h4>
-	<h4>Missed vote: {{ politician.missed_votes_pct }}%</h4>
-	<h4>Votes with party: {{ politician.votes_with_party_pct }}%</h4>
+	<h4>Total Votes: {{ politician.total_votes }}</h4>
+	<h4>Missed Votes: {{ politician.missed_votes }}</h4>
+	<h4>Missed vote percentage: {{ politician.missed_votes_pct }}%</h4>
+	<h4>Votes with party percentage: {{ politician.votes_with_party_pct }}%</h4>
 	<h4>Quotes</h4>
+	<hr>
 	<ul>
 		{% for quote in politician.quotes.all %}
 			<li>- "{{ quote.content }}"</li>
 		{% endfor %}
 	</ul>
-	<a href="{% url 'quote_detail' pk=rand %}" id='pol-btn' class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Swipe Again<i class="material-icons right">send</i></a>
 	</div>
 {% if user.is_staff %}
 	<div class="container columns">

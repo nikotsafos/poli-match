@@ -136,3 +136,7 @@ label, input, ::placeholder {
 .twitter-logo {
 	display: inline;
 }
+
+.swipeagainbtn {
+	text-align: center;
+}
