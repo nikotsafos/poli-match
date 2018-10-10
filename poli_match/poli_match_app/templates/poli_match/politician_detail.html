@@ -6,6 +6,7 @@
 <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
 {% if user.is_staff %}
 	<a href="{% url 'politician_delete' pk=politician.pk %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Delete<i class="material-icons right">delete</i></a>
+	<a href="{% url 'politician_edit' pk=politician.pk %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Edit<i class="material-icons right">edit</i></a>
 	<a href="{% url 'quote_detail' pk=rand %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Swipe Again<i class="material-icons right">send</i></a>
 	<h4>Office: {{ politician.office }}</h4>
 	<img src="{{ politician.photo_url }}" alt="politician_photo" class="politician-photo">

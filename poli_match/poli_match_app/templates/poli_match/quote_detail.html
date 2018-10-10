@@ -9,7 +9,8 @@
             <div class="card-content white-text">
               <span class="card-title">Quote</span>
 			  <ul>
-					<li>{{ quote.content }}</li>
+          <li>{{ quote.content }}</li>
+          <li class="source">{{ quote.source }}</li>
 			
 			</ul>
             </div>
@@ -17,6 +18,7 @@
               <a href="{% url 'politician_detail' pk=quote.politician.id %}"><i class="material-icons medium">thumb_down</i></a>
               <a href="{% url 'politician_detail' pk=quote.politician.id %}"><i class="material-icons medium">thumb_up</i></a>
               <a href="{% url 'quote_delete' pk=quote.pk %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Delete<i class="material-icons right">delete</i></a>
+              <a href="{% url 'quote_edit' pk=quote.pk %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Edit<i class="material-icons right">edit</i></a>
             </div>
           </div>
         </div>
@@ -31,6 +33,7 @@
                       <span class="card-title">Quote</span>
                 <ul>
                   <li>{{ quote.content }}</li>
+                  <li class="source">{{ quote.source }}</li>
               
               </ul>
                     </div>

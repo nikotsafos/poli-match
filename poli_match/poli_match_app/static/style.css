@@ -133,3 +133,6 @@ label, input, ::placeholder {
 	color: #FBFBFC;
 }
 
+.source {
+	text-align: right;
+}
