@@ -133,6 +133,6 @@ label, input, ::placeholder {
 	color: #FBFBFC;
 }
 
-.source {
-	text-align: right;
+.twitter-logo {
+	display: inline;
 }
