@@ -17,11 +17,11 @@ def quote_detail(request, pk):
     return render(request, 'poli_match/quote_detail.html', {'quote': quote})
 
 def quotes(request):
-    quotes = Quote.objects.all()
+    quotes = Quote.objects.all().order_by('politician')
     return render(request, 'poli_match/quotes.html', {'quotes': quotes})
 
 def politicians(request):
-    politicians = Politician.objects.all()
+    politicians = Politician.objects.all().order_by('state', 'title')
     return render(request, 'poli_match/politicians.html', {'politicians': politicians})
 
 def politician_detail(request, pk):

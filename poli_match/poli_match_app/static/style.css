@@ -6,6 +6,10 @@ a, p, li {
 	font-family: 'Merriweather', serif;
 }
 
+h6 {
+	font-size: 2.5em;
+}
+
 #brand-logo{
 	width: auto;
 	height: 70px;
