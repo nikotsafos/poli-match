@@ -23,7 +23,7 @@
 	<hr>
 	<ul>
 		{% for quote in politician.quotes.all %}
-			<li>- "{{ quote.content }}"</li>
+			<li><a href="{% url 'quote_detail' pk=quote.pk %}">- "{{ quote.content }}"</a></li>
 		{% endfor %}
 	</ul>
 	</div>

@@ -6,6 +6,18 @@ a, p, li {
 	font-family: 'Merriweather', serif;
 }
 
+a {
+	color: black;
+}
+
+a:hover {
+	color: white;
+}
+
+.poli_link {
+	text-decoration: underline;
+}
+
 h6 {
 	font-size: 2.5em;
 }
@@ -134,8 +146,9 @@ header, main, footer {
 } */
 
 label, input, ::placeholder {
-	color: #FBFBFC;
+	color: black;
 }
+
 
 .twitter-logo {
 	display: inline;
