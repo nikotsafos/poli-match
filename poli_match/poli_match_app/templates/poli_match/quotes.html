@@ -5,8 +5,12 @@
 <h2>Quotes</h2>
 <ul>
 	{% for quote in quotes %}
-		<li><a href="{% url 'quote_detail' pk=quote.pk %}">{{ quote.content }}</a> by <a href="{% url 'politician_detail' pk=quote.politician.id %}">{{ quote.politician }}</a></li>
+		<li><a class="poli_link" href="{% url 'quote_detail' pk=quote.pk %}">{{ quote.content }}</a> by <a href="{% url 'politician_detail' pk=quote.politician.id %}">{{ quote.politician }}</a></li>
 	{% endfor %}
 </ul>
+{% if user.is_staff %}
+	<!-- <a href="{% url 'quote_create' %}" class="waves-effect waves-light btn #e3f2fd blue lighten-5 blue-text text-darken-2">Add Quote<i class="material-icons right">add</i></a> -->
+{% endif %}
 </div>
 {% endblock %}
+

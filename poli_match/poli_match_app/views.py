@@ -23,6 +23,7 @@ def quotes(request):
 
 def politicians(request):
     politicians = Politician.objects.filter(state='WA')
+    # filter(state='WA')
     # all().order_by('state', 'title')
     
     return render(request, 'poli_match/politicians.html', {'politicians': politicians})
@@ -111,6 +112,7 @@ def politician_create(request):
         form = PoliticianForm()
         return render(request, 'poli_match/politician_form.html', {'form': form})
 
+
 def quote_create(request):
     if request.method == "POST":
         form = QuoteForm(request.POST)
@@ -118,5 +120,6 @@ def quote_create(request):
             quote = form.save()
             return redirect('quote_detail', pk=quote.pk)
     else:
-        form = PoliticianForm()
-        return render(request, 'politician_form.html', {'form': form})
+        form = QuoteForm()
+        return render(request, 'poli_match/quote_form.html', {'form': form})
+
