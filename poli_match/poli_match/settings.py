@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import environ
 import dj_database_url
+import django_heroku
 root = environ.Path(__file__) - 3
 env = environ.Env(DEBUG=(bool, True),)
 environ.Env.read_env()
@@ -119,3 +120,4 @@ USE_TZ = True
 public_root = root.path('public/')
 
 STATIC_URL = '/static/'
+django_heroku.settings(locals())
