@@ -1,1 +1,2 @@
-web: gunicorn poli_match/poli_match.wsgi
+web: gunicorn poli_match.wsgi
+release: python manage.py migrate
