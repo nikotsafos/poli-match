@@ -9,7 +9,7 @@ from .forms import PoliticianForm, QuoteForm
 
 def index(request):
     quotes = Quote.objects.all()
-    rand = randint(3, 13)
+    rand = randint(1, 59)
     print('this is random quote', str(rand))
     return render(request, 'poli_match/index.html', {'quotes': quotes, 'rand': str(rand)})
 
@@ -30,7 +30,7 @@ def politicians(request):
 
 def politician_detail(request, pk):
     politician = Politician.objects.get(id=pk)
-    rand = randint(3, 13)
+    rand = randint(1, 59)
     return render(request, 'poli_match/politician_detail.html', {'politician': politician, 'rand': rand})
 
 # Auth-related routes
