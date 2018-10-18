@@ -22,9 +22,7 @@ SITE_ROOT = root()
 DEBUG = env('DEBUG')
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = [
-    'limitless-ocean-95291.herokuapp.com'
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
