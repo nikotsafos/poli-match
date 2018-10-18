@@ -1,1 +1,1 @@
-web: gunicorn project_name.wsgi
+web: gunicorn limitless-ocean-95291.wsgi
