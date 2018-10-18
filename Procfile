@@ -1,1 +1,1 @@
-web: gunicorn *.wsgi
+web: gunicorn poli_match.wsgi
