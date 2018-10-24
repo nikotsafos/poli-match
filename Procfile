@@ -1,1 +1,1 @@
-web: gunicorn partyswipe.wsgi --log-file -
+web: gunicorn ./poli_match.wsgi --log-file -
