@@ -1,1 +1,1 @@
-web: gunicorn poli_match.wsgi --log-file -
+web: gunicorn poli_match_app.wsgi --log-file -
